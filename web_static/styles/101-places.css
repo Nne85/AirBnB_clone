@@ -116,13 +116,3 @@ div.reviews ul li p {
 .places article div.amenities ul li:nth-child(3) {
 	background-image: url('../images/icon_pets.png');
 }
-@media only screen and (max-width: 767px) {
-	.article_group {
-		flex-direction: column;
-		justify-content: center;
-		align-items:center;
-	}
-	.places h1 {
-		margin: 10% 0px 0px 0px;
-	}
-}
