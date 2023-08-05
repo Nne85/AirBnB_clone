@@ -39,12 +39,18 @@ class BaseModel:
                     self.updated_at = datetime.fromisoformat(kwargs[key])
                 else:
                     setattr(self, key, kwargs[key])
+
+            else:
+                self.id = str(uuid4())
+                self.created_at = datetime.now()
+                self.updated_at = datetime.now()
+                """save each instance created to storage object """
+                models.storage.new(self)
+
         else:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            """save each instance created to storage object (i.e dict or {})"""
-            models.storage.new(self)
 
     def __str__(self):
         """Print an instance in string format"""
