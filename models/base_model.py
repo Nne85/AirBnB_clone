@@ -61,6 +61,7 @@ class BaseModel:
         """Update "updated_at" attribute with current datetime
         and save/write the instance to a file"""
         self.updated_at = datetime.now()
+        models.storage.new(self)
         models.storage.save()
 
     def to_dict(self):
